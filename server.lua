@@ -4,6 +4,10 @@ term.clear()
 peripheral.find("modem", rednet.open)
 rednet.host("vcs", "main")
 
+if rednet.isOpen() == false do
+  error("No modem connected")
+end
+
 print("VCS://MAIN LISTENING...")
 
 function findBeforeFirstSlash(str)
