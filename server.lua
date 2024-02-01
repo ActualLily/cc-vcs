@@ -4,7 +4,11 @@ term.clear()
 peripheral.find("modem", rednet.open)
 rednet.host("vcs", "main")
 
+<<<<<<< HEAD
+if rednet.isOpen() == false then
+=======
 if rednet.isOpen() == false do
+>>>>>>> 3f74a9c2025152975b7c1550b5b2427707f784e7
   error("No modem connected")
 end
 
