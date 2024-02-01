@@ -1,6 +1,8 @@
+term.setCursorPos(1, 1)
+term.clear()
+
 peripheral.find("modem", rednet.open)
 rednet.host("vcs", "main")
-term.clear()
 
 print("VCS://MAIN LISTENING...")
 
