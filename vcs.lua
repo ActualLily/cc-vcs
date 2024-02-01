@@ -9,6 +9,11 @@ local rq = args[1]
 local ver = args[2] or "latest"
 
 peripheral.find("modem", rednet.open)
+
+if rednet.isOpen() == false then
+  error("No modem connected")
+end
+
 mainid = rednet.lookup("vcs", "main")
 
 print("VCS://MAIN == #"..tostring(mainid))
