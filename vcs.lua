@@ -45,6 +45,7 @@ while (filesleft) do
     print("ERROR: No FILE:// header found in protocol")
   else
     file.write(message)
+    file.flush()
   end
 
 end
