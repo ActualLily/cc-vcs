@@ -4,11 +4,7 @@ term.clear()
 peripheral.find("modem", rednet.open)
 rednet.host("vcs", "main")
 
-<<<<<<< HEAD
 if rednet.isOpen() == false then
-=======
-if rednet.isOpen() == false do
->>>>>>> 3f74a9c2025152975b7c1550b5b2427707f784e7
   error("No modem connected")
 end
 
@@ -39,14 +35,6 @@ function findAfterLastSlash(str)
   return string.sub(str, lastSlash + 1)
 end
 
-function getTableSize(table)
-  local size = 0
-  for n in pairs(table) do
-    size = size + 1
-  end
-  return size
-end
-
 while (true) do
   local cpuid, message = rednet.receive("vcs")
 
@@ -65,7 +53,7 @@ while (true) do
   local path = "vcs/" .. warez .. "/" .. ver
 
   local files = fs.find(path .. "/*")
-  print(getTableSize(files) .. " entries found in " .. path)
+  print(#files .. " entries found in " .. path)
 
   os.sleep(1)
 
